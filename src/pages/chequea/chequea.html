@@ -1,12 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Test 1</ion-title>
+  <ion-navbar [color]="isAndroid ? 'royal' : 'light'">
+  	<ion-buttons start>
+  	  <button (click)="goHome()" ion-button icon-only>
+  	    <ion-icon name="arrow-back"></ion-icon>
+  	  </button>
+  	</ion-buttons>
+  	<ion-title start>Chequea</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="alarm"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Bienvenidos</h2>
-  <p>
-    {{"HELLO" | translate }}
-  </p>
+<ion-content padding class="idioma-container">
+  <div class="pick-currency">
+  	<div class="currency-item first">
+  		<img (click)="takePicture()" src="../../assets/imgs/moneda-plantilla.png" />
+  	</div>
+  	<div class="currency-item">
+  		<img (click)="takePicture()" src="../../assets/imgs/billete-plantilla.png" />
+  	</div>
+  </div>
 </ion-content>

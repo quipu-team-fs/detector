@@ -1,0 +1,59 @@
+page-idioma {
+	ion-content{
+		background-image:url('../../assets/imgs/fondomain.png');
+		background-position:center;
+		background-size:contain;
+	}
+	.idioma-container{
+		text-align:center;
+		width: 100%;
+	}
+	button{
+		&.button{
+
+			&.button-default{
+				border:1.25px solid $customBlue;
+				background-color:#fff;
+				width:80%;
+				margin-left:auto;
+				margin-right:auto;
+				text-align:center;
+				font-weight: lighter;
+				color:$customBlue;
+				margin-bottom:2rem;
+				transition:.35 background-color ease-in;
+				box-shadow:none;
+				&.last{
+					margin-bottom:0;
+				}
+				&.activated{
+					background-color:$customBlue;
+					color:#fff;
+				}
+			}
+			
+		}
+	}
+
+	.saludo-block{
+		opacity:0;
+		transform:translateY(30%);
+		transition:.5s all ease;
+		margin-bottom:2rem;
+		font-weight:bold;
+		font-size:2.25rem;
+		&.active{
+			opacity:1;
+			transform:translateY(0);
+		}
+	}
+
+	img{
+		&.main-logo-app{
+			width: 55%;
+			height: 55%;
+			display: block;
+			margin: 0 auto 2rem;
+		}
+	}
+}

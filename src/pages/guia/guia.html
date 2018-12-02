@@ -1,17 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-toolbar>
+	  <ion-buttons end>
+	    <button (click)="goToOtherPage()" ion-button color="primary">{{"SKIP" | translate }}</button>
+	  </ion-buttons>
+	</ion-toolbar>
 </ion-header>
 
-<ion-chip>
-  <ion-label>Default</ion-label>
-</ion-chip>
+<ion-content>
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image"/>
+      <p>{{slide.description}}</p>
+    </ion-slide>
 
-<ion-tabs tabsPlacement="bottom">
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Item2" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Item3" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Item4" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Item5" tabIcon="home"></ion-tab>
-</ion-tabs>
+
+  </ion-slides>
+</ion-content>

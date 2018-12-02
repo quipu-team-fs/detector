@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'royal' : 'light'">
+  	<ion-title start>Inicio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="alarm"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="main-pic">
+  	<img src="../../assets/imgs/main-vicuna.png" />
+  </div>
+  <p>
+    {{"CALL_1" | translate }}
+  </p>
+  <div class="action-mod">
+  	<ion-grid>
+  		<ion-row>
+  			<ion-col col-6>
+  				<button (click)="switchTabs()" ion-button color="light">{{"SI" | translate }}</button>
+  			</ion-col>
+  			<ion-col col-6>
+  				<button (click)="switchTabs()" ion-button color="light">{{"No" | translate }}</button>
+  			</ion-col>
+  		</ion-row>
+  	</ion-grid>
+  </div>
+  <div class="noticias-content">
+  	<ion-grid>
+  		<ion-row *ngFor="let noticia of noticias">
+  			<ion-col col-12>
+  				<div class="noticias-item">
+  		  			<img [src]="noticia.image" class="slide-image"/>
+  		  			<p>{{noticia.description}}</p>
+  		  		</div>
+  		  	</ion-col>
+  		</ion-row>
+	</ion-grid>
+
+  </div>
+</ion-content>

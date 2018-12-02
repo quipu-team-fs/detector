@@ -1,0 +1,44 @@
+page-presentacion {
+	ion-header{
+		
+		ion-navbar{
+			div.toolbar-background{
+				background-color:$customBlue !important;
+
+			}
+			ion-title{
+				.toolbar-title{
+					color:#fff !important;
+					font-weight:100;
+				}
+				
+			}
+		}
+	}
+	button{
+		&.button{
+
+			&.button-default{
+				border:1.25px solid $customBlue;
+				background-color:#fff;
+				width:80%;
+				margin-left:auto;
+				margin-right:auto;
+				text-align:center;
+				font-weight: lighter;
+				color:$customBlue;
+				margin-bottom:2rem;
+				transition:.35 background-color ease-in;
+				box-shadow:none;
+				&.last{
+					margin-bottom:0;
+				}
+				&.activated{
+					background-color:$customBlue;
+					color:#fff;
+				}
+			}
+			
+		}
+	}
+}

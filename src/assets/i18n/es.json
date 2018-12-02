@@ -1,4 +1,10 @@
 {
-	"HELLO": "Hola",
-	"LOVE" : "Amor"
+	"INTRO_1": "Elige tu idioma",
+	"INTRO_1_OPCION_1" : "Español",
+	"INTRO_1_OPCION_2" : "Quechua",
+	"INTRO_1_OPCION_3" : "Inglés",
+	"SKIP" : "Saltar",
+	"CALL_1": "¿Tienes billetes o monedas a la mano?",
+	"SI": "Si",
+	"NO": "No"
 }

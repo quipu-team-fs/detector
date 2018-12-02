@@ -5,13 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
-import { HomePage } from '../pages/home/home';
+import { IdiomaPage } from '../pages/idioma/idioma';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = IdiomaPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, translate: TranslateService) {
     

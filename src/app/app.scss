@@ -14,6 +14,38 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+/* Colores */
+
+$customBlue:#003366;
+$customYellow:#FFFF33;
+$customLightBlue:#3FA9F5;
+$customPurple:#9966FF;
+
+ion-navbar{
+	ion-icon {
+	    &[class*="alarm"] {
+	        background: url("../assets/imgs/icons/vista.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        width:2.75rem;
+	        height:2.75rem;
+	        &:before{
+	        	content:'';
+	        }
+	    }
+	    &[class*="add"] {
+	        background: url("../assets/imgs/icons/audio.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        width:2.75rem;
+	        height:2.75rem;
+	        &:before{
+	        	content:'';
+	        }
+	    }
+		color: #fff;
+
+	}
+
+}
 
 ion-tabs{
 	z-index:9;
@@ -31,6 +63,107 @@ ion-tabs{
 	        &:before{
 	        	content:'';
 	        }
-	    }//in case of active
+	    }
+	    &[class*="american-football"] {
+	        background: url("../assets/imgs/icons/chequea.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        &:before{
+	        	content:'';
+	        }
+	    }
+	    &[class*="at"] {
+	        background: url("../assets/imgs/icons/serie.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        &:before{
+	        	content:'';
+	        }
+	    }
+	    &[class*="beaker"] {
+	        background: url("../assets/imgs/icons/guia.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        &:before{
+	        	content:'';
+	        }
+	    }
 	}
+	a{
+		&.tab-button{
+			.tab-button-text{
+				font-weight:100;
+			}
+		}
+		&.tab-button[aria-selected='true']{
+			background-color:$customBlue;
+			.tab-button-text{
+				color:#fff;
+			}
+			ion-icon{
+				&[class*="home"] {
+				    background: url("../assets/imgs/icons/home-active.png") no-repeat 50% 50%;
+				    background-size: contain;
+				}
+				&[class*="american-football"] {
+				    background: url("../assets/imgs/icons/chequea-active.png") no-repeat 50% 50%;
+				    background-size: contain;
+				    
+				}
+				&[class*="at"] {
+				    background: url("../assets/imgs/icons/serie-active.png") no-repeat 50% 50%;
+				    background-size: contain;
+				}
+				&[class*="beaker"] {
+				    background: url("../assets/imgs/icons/guia-active.png") no-repeat 50% 50%;
+				    background-size: contain;
+				}
+			}
+			
+		}
+	}
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: light;
+	font-style: normal;
+	src: local('Roboto Light'),
+	url('../assets/fonts/roboto/roboto-light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: normal;
+	font-style: normal;
+	src: local('Roboto Regular'),
+	url('../assets/fonts/roboto/roboto-regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: bold;
+	font-style: normal;
+	src: local('Roboto Bold'),
+	url('../assets/fonts/roboto/roboto-bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: black;
+	font-style: normal;
+	src: local('Roboto Black'),
+	url('../assets/fonts/roboto/roboto-black.ttf') format('truetype');
+}
+
+$font-family-md-base: "Roboto";
+$font-family-ios-base: "Roboto";
+$font-family-wp-base: "Roboto";
+
+.vertical-align-content > *
+{
+     display: flex!important;
+     align-content: center!important;
+     align-items: center!important;
+}
+
+.back-button-text{
+	display:none;
 }

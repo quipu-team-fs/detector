@@ -1,20 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>{{"HELLO" | translate }}</h2>
-  <p>
-    Aqui irá texto de bienvenida
-  </p>
-</ion-content>
-
 <ion-tabs tabsPlacement="bottom">
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Item2" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Item3" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Item4" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Item5" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab1Uri" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Uri" tabTitle="Item2" tabIcon="american-football"></ion-tab>
+  <ion-tab [root]="tab3Uri" tabTitle="Item3" tabIcon="at"></ion-tab>
+  <ion-tab [root]="tab2Uri" tabTitle="Item4" tabIcon="beaker"></ion-tab>
 </ion-tabs>
