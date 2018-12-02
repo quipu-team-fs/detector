@@ -1,5 +1,7 @@
 {
   "name": "detector",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

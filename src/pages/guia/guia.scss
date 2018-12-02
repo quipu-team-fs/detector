@@ -1,0 +1,19 @@
+page-home {
+	p, h2{
+		display:block;
+	}
+
+	ion-icon {
+	    &[class*="custom-"] {
+	        margin: 0 5px 0 0;
+	        vertical-align: middle;
+	        $sz: 20px;
+	        width: $sz;
+	        height: $sz;
+	    } // custom icons
+	    &[class*="chat"][ng-reflect-is-active="true"] {
+	        background: url("../assets/imgs/icons/pin_on.png") no-repeat 50% 50%;
+	        background-size: contain;
+	    }//in case of active
+	}
+}

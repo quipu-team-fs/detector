@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-tabs{
+	z-index:9;
+	ion-icon {
+	    &[class*="custom-"] {
+	        margin: 0 5px 0 0;
+	        vertical-align: middle;
+	        $sz: 20px;
+	        width: $sz;
+	        height: $sz;
+	    } // custom icons
+	    &[class*="home"] {
+	        background: url("../assets/imgs/icons/home.png") no-repeat 50% 50%;
+	        background-size: contain;
+	        &:before{
+	        	content:'';
+	        }
+	    }//in case of active
+	}
+}
