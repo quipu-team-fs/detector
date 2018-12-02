@@ -10,7 +10,7 @@ export class GuiaPage {
 
 	slides = [
 	    {
-	      description: "",
+	      description: "¡Sigue los consejos y que no te estafen otra vez!",
 	      image: "../../assets/imgs/slides/1.png",
 	    },
 	    {

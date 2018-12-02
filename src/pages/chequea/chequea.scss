@@ -30,4 +30,13 @@ page-chequea {
 			}
 		}
 	}
+
+	ion-content{
+		p{
+			color:$customBlue;
+			width:90%;
+			text-align:center;
+			margin:3rem auto 0;
+		}
+	}
 }

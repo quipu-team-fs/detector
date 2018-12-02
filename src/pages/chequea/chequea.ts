@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController, normalizeURL } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { EscribePage } from '../escribe/escribe';
 import { Camera } from '@ionic-native/camera';
 import { FirebaseService } from '../service/firebase.service';
+import { ActionSheetController } from 'ionic-angular';
 
 @Component({
   selector: 'page-chequea',
@@ -10,14 +12,70 @@ import { FirebaseService } from '../service/firebase.service';
 })
 export class ChequeaPage {
 
-	public base64Image: string;
+  currMoneda = 0;
+  money = [
+    {
+      id:0,
+      image:'../../assets/imgs/currency/2.png'
+    },
+    {
+      id:1,
+      image:'../../assets/imgs/currency/5.png'
+    },
+    {
+      id:2,
+      image:'../../assets/imgs/currency/20.png'
+    },
+    {
+      id:3,
+      image:'../../assets/imgs/currency/100.png'
+    }
+  ];
 
   constructor(public navCtrl: NavController, 
   	public camera: Camera,
   	public toastCtrl: ToastController,
-  	public firebaseService: FirebaseService) {
+  	public firebaseService: FirebaseService,
+    public actionSheetCtrl: ActionSheetController) {
 
   }
+
+  goToOtherPage() {
+    this.navCtrl.push(EscribePage,{
+      item:this.currMoneda
+    });
+  }
+
+  selectCurrency(id){
+    this.currMoneda = id;
+    if(id > 1){
+      this.presentActionSheet();
+    } else {
+      this.takePicture();
+    }
+    
+  }
+
+  presentActionSheet() {
+      const actionSheet = this.actionSheetCtrl.create({
+        title: '¿Qué desea hacer?',
+        buttons: [
+          {
+            text: 'Toma una foto',
+            handler: () => {
+              this.takePicture();
+            }
+          },
+          {
+            text: 'Escribe tu numero de serie',
+            handler: () => {
+              this.goToOtherPage();
+            }
+          }
+        ]
+      });
+      actionSheet.present();
+    }
 
   goHome() {
       this.navCtrl.parent.select(0);
@@ -28,18 +86,12 @@ export class ChequeaPage {
    		
 
        this.camera.getPicture({
-           destinationType: context.camera.DestinationType.FILE_URI,
+           destinationType: context.camera.DestinationType.DATA_URL,
            targetWidth: 1000,
            targetHeight: 1000
        }).then((imageData) => {
          // imageData is a base64 encoded string
-           context.base64Image = "data:image/jpeg;base64," + imageData;
-           let toast = this.toastCtrl.create({
-             message: "Data es " + imageData,
-             duration: 3000
-           });
-           toast.present();
-           context.uploadImageToFirebase(context.base64Image);
+           context.uploadImageToFirebase("data:image/jpeg;base64," + imageData);
        }, (err) => {
            console.log(err);
        });
@@ -47,15 +99,12 @@ export class ChequeaPage {
 
 
    uploadImageToFirebase(image){
-       image = normalizeURL(image);
-       let toast = this.toastCtrl.create({
-         message: 'Imagen subida exitosamente ' + image,
-         duration: 3000
-       });
-       toast.present();
+       const parseImage = normalizeURL(image);
+       const context = this;
+       //toast.present();
        //uploads img to firebase storage
-       this.firebaseService.uploadImage(image).then(photoURL => {
-         //toast.present();
+       this.firebaseService.uploadImage(parseImage).then(photoURL => {
+       		context.firebaseService.getUploadedImage();
         });
      }
 

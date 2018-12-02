@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar [color]="isAndroid ? 'royal' : 'light'">
+  	<ion-title start>Chequea</ion-title>
+    <ion-buttons end>
+      <!--
+      <button ion-button icon-only>
+        <ion-icon name="alarm"></ion-icon>
+      </button>
+    -->
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="vertical-align-content" padding>
+  <div class="message-mod">
+    <div class="pic">
+      <img src="../../assets/imgs/exito.png" />
+    </div>
+    <p>¡Qué alivio! Tu billete fue encontrado en nuestra Base de Datos.</p>
+    <div class="buttonWrapper">
+      <button (click)="goBackToCheck()" ion-button color="light">Nueva consulta</button>
+    </div>
+  </div>
+</ion-content>

@@ -15,9 +15,13 @@ import { ChequeaPage } from '../pages/chequea/chequea';
 import { ManualPage } from '../pages/manual/manual';
 import { PresentacionPage } from '../pages/presentacion/presentacion';
 import { IdiomaPage } from '../pages/idioma/idioma';
+import { EscribePage } from '../pages/escribe/escribe';
+import { ExitoPage } from '../pages/exito/exito';
+import { ErrorPage } from '../pages/error/error';
 
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Camera } from '@ionic-native/camera';
+import { HTTP } from '@ionic-native/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -44,7 +48,10 @@ export function createTranslateLoader(http: HttpClient) {
     ManualPage,
     PresentacionPage,
     IdiomaPage,
-    GuiaPage
+    GuiaPage,
+    EscribePage,
+    ExitoPage,
+    ErrorPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,10 @@ export function createTranslateLoader(http: HttpClient) {
     ManualPage,
     PresentacionPage,
     IdiomaPage,
-    GuiaPage
+    GuiaPage,
+    EscribePage,
+    ExitoPage,
+    ErrorPage
   ],
   providers: [
     StatusBar,
@@ -80,6 +90,7 @@ export function createTranslateLoader(http: HttpClient) {
     ImagePicker,
     FirebaseService,
     Camera,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

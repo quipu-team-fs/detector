@@ -8,9 +8,6 @@
   	<ion-title start>Chequea</ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
-        <ion-icon name="alarm"></ion-icon>
-      </button>
-      <button ion-button icon-only>
         <ion-icon name="add"></ion-icon>
       </button>
       <button ion-button icon-only>
@@ -20,7 +17,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="idioma-container">
+<!-- <ion-content padding class="idioma-container">
   <div class="pick-currency">
   	<div class="currency-item first">
   		<img (click)="takePicture()" src="../../assets/imgs/moneda-plantilla.png" />
@@ -29,4 +26,13 @@
   		<img (click)="takePicture()" src="../../assets/imgs/billete-plantilla.png" />
   	</div>
   </div>
+</ion-content> -->
+
+<ion-content>
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let singMoney of money">
+      <img (click)="selectCurrency(singMoney.id)" [src]="singMoney.image" class="currency"/>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
