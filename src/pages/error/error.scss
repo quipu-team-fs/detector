@@ -20,6 +20,30 @@ page-error {
 		p{
 			color:#FF0000 !important;
 		}
+		.message-mod{
+			.pic{
+				text-align:center;
+				img{
+					width:80%;
+				}
+			}
+			p{
+				width:85%;
+				margin-left:auto;
+				margin-right:auto;
+				text-align:center;
+				margin-top:2rem;
+				margin-bottom:3rem;
+				&.special{
+					color:$customBlue !important;
+					opacity:.5;
+					font-size:1.25rem;
+				}
+			}
+			.buttonWrapper{
+				text-align:center;
+			}
+		}
 	}
 
 	button{
